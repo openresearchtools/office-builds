@@ -91,7 +91,7 @@ jobs:
         name: Select the existing retained Go toolchain
         if: matrix.component == 'files'
         run: python3 -c 'import json; print("version=" + json.load(open("source/auth/dependencies/go-toolchain/sources.json"))["version"])' >> "$GITHUB_OUTPUT"
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
         if: matrix.component == 'files'
         with:
           go-version: ${{ steps.go-compiler.outputs.version }}
